@@ -1,3 +1,7 @@
+2020-02-17  Jérémie Galarneau  <jeremie.galarneau@efficios.com>
+
+	* thread.c (thr_try_catch_cmd): Print thread name.
+
 2020-02-14  Simon Marchi  <simon.marchi@efficios.com>
 
 	* aarch64-tdep.c (aarch64_displaced_step_copy_insn): Use
