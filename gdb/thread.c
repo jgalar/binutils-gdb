@@ -1570,9 +1570,8 @@ thr_try_catch_cmd (thread_info *thr, const char *cmd, int from_tty,
       if (!flags.silent || cmd_result.length () > 0)
 	{
 	  if (!flags.quiet)
-	    printf_filtered (_("\nThread %s (%s):\n"),
-			     print_thread_id (thr),
-			     target_pid_to_str (inferior_ptid).c_str ());
+	    printf_filtered (_("\n%s:\n"),
+			     thread_target_id_str (thr).c_str ());
 	  printf_filtered ("%s", cmd_result.c_str ());
 	}
     }
@@ -1581,9 +1580,8 @@ thr_try_catch_cmd (thread_info *thr, const char *cmd, int from_tty,
       if (!flags.silent)
 	{
 	  if (!flags.quiet)
-	    printf_filtered (_("\nThread %s (%s):\n"),
-			     print_thread_id (thr),
-			     target_pid_to_str (inferior_ptid).c_str ());
+	    printf_filtered (_("\n%s:\n"),
+			     thread_target_id_str (thr).c_str ());
 	  if (flags.cont)
 	    printf_filtered ("%s\n", ex.what ());
 	  else
